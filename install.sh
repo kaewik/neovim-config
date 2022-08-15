@@ -15,7 +15,6 @@ set_up_links () {
     mkdir -p $HOME/.config/nvim/
     ln -nfs $PROJECT_FOLDER/init.lua $HOME/.config/nvim/init.lua
     ln -nfs $PROJECT_FOLDER/lua $HOME/.config/nvim/lua
-    ln -nfs $PROJECT_FOLDER/coc-settings.json $HOME/.config/nvim/coc-settings.json
 }
 
 set_up_links
