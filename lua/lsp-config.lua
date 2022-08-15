@@ -45,7 +45,13 @@ lspconfig.clangd.setup({
     capabilities = default_capabilities,
     cmd = { "clangd-12", "--background-index" },
 })
-lspconfig.hls.setup(default_config)
+lspconfig.hls.setup({
+    on_attach = default_on_attach,
+    capabilities = default_capabilities,
+    root_dir = function (filepath)
+       return (util.root_pattern('hie.yaml', 'stack.yaml', 'cabal.project')(filepath))
+    end
+})
 
 require('rust-tools').setup({
     server = default_config
