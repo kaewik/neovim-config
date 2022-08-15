@@ -24,7 +24,7 @@ vim.cmd[[colorscheme sonokai]]
 vim.g.netrw_liststyle = 3
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
-vim.o.mouse = 'a'
+vim.o.mouse = 'nv'
 vim.o.mousefocus = true
 vim.opt.clipboard = 'unnamedplus'
 vim.cmd[[syntax on]]

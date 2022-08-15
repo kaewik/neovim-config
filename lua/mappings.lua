@@ -25,6 +25,25 @@ key_mapper('i', '<up>', '<nop>')
 key_mapper('i', '<down>', '<nop>')
 key_mapper('i', '<left>', '<nop>')
 key_mapper('i', '<right>', '<nop>')
+key_mapper('n', 'j', 'jzz')
+key_mapper('n', 'k', 'kzz')
+key_mapper('v', 'j', 'jzz')
+key_mapper('v', 'k', 'kzz')
+key_mapper('n', 'H', '10h')
+key_mapper('v', 'H', '10h')
+key_mapper('n', 'J', '5jzz')
+key_mapper('v', 'J', '5jzz')
+key_mapper('n', 'K', '5kzz')
+key_mapper('v', 'K', '5kzz')
+key_mapper('n', 'L', '10l')
+key_mapper('v', 'L', '10l')
+
+
+-- mouse mappings
+key_mapper('', '<ScrollWheelUp>', '5kzz')
+key_mapper('', '<ScrollWheelDown>', '5jzz')
+key_mapper('', '<S-ScrollWheelUp>', '5zh')
+key_mapper('', '<S-ScrollWheelDown>', '5zl')
 
 
 -- filebrowser mappings
