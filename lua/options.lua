@@ -28,9 +28,7 @@ vim.o.mouse = 'nv'
 vim.o.mousefocus = true
 vim.opt.clipboard = 'unnamedplus'
 vim.cmd[[syntax on]]
-vim.opt.foldmethod='expr'
-vim.opt.foldexpr='nvim_treesitter#foldexpr()'
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 vim.opt.list = true
 vim.opt.listchars = 'tab:>-,trail:.,extends:>'
