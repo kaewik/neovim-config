@@ -17,14 +17,10 @@ vim.cmd [[
   augroup END
 
   function! SmallFile()
-    set foldmethod=expr
-    set foldexpr=nvim_treesitter#foldexpr()
     echo "Small file"
   endfunction
 
   function! MediumFile()
-    " no automatic folds
-    set foldmethod=manual
     echo "Medium file"
   endfunction
 
