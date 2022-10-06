@@ -37,3 +37,4 @@ vim.opt.signcolumn = 'number'
 vim.opt.updatetime = 300
 vim.opt.cmdheight = 2
 vim.opt.encoding = 'utf-8'
+vim.opt.cursorline = true
