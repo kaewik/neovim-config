@@ -39,3 +39,10 @@ vim.opt.cmdheight = 2
 vim.opt.encoding = 'utf-8'
 vim.opt.cursorline = true
 vim.opt.switchbuf = {'usetab', 'newtab'}
+vim.cmd[[
+      augroup VCenterCursor
+            au!
+            au BufEnter,WinEnter,WinNew,VimResized *,*.*
+                  \ let &scrolloff=winheight(win_getid())/2
+      augroup END
+]]
