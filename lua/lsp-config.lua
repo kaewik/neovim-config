@@ -1,7 +1,7 @@
 local lspconfig = require'lspconfig'
 local util = require("lspconfig.util")
--- local null_ls = require("null-ls")
 local mappings = require("mappings")
+local ts_utils = require('typescript')
 
 local function default_on_attach(client, bufnr)
     print('Attaching to ' .. client.name)
@@ -24,20 +24,32 @@ local default_config = {
 }
 
 -- setup language servers here
-lspconfig.tsserver.setup({
-    on_attach = function(client, bufnr)
-        client.resolved_capabilities.document_formatting = false
-        client.resolved_capabilities.document_range_formatting = false
-        local ts_utils = require("nvim-lsp-ts-utils")
-        ts_utils.setup({})
-        ts_utils.setup_client(client)
-
-        mappings.set_local_ts_mappings(bufnr)
-        default_on_attach(client, bufnr)
-    end,
-    capabilities = default_capabilities,
-    root_dir = util.root_pattern("tsconfig.json", "jsconfig.json"),
-    init_options = make_init_options(),
+-- lspconfig.tsserver.setup({
+--     on_attach = function(client, bufnr)
+--         client.resolved_capabilities.document_formatting = false
+--         client.resolved_capabilities.document_range_formatting = false
+--         local ts_utils = require("nvim-lsp-ts-utils")
+--         ts_utils.setup({})
+--         ts_utils.setup_client(client)
+-- 
+--         mappings.set_local_ts_mappings(bufnr)
+--         default_on_attach(client, bufnr)
+--     end,
+--     capabilities = default_capabilities,
+--     root_dir = util.root_pattern("tsconfig.json", "jsconfig.json"),
+--     init_options = make_init_options(),
+-- })
+ts_utils.setup({
+    disable_commands = false, -- prevent the plugin from creating Vim commands
+    debug = false, -- enable debug logging for commands
+    go_to_source_definition = {
+        fallback = true, -- fall back to standard LSP definition on failure
+    },
+    server = { -- pass options to lspconfig's setup method
+        on_attach = default_on_attach,
+        capabilities = default_capabilities,
+        root_dir = util.root_pattern("tsconfig.json", "jsconfig.json"),
+    },
 })
 lspconfig.eslint.setup(default_config)
 lspconfig.clangd.setup({

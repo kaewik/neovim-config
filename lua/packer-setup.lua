@@ -37,6 +37,7 @@ packer.startup(function()
     use 'anott03/nvim-lspinstall'
     use 'nvim-lua/plenary.nvim'
     use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+    use 'jose-elias-alvarez/typescript.nvim'
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
