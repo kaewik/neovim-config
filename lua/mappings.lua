@@ -31,13 +31,11 @@ key_mapper('', '<S-ScrollWheelUp>', '5zh')
 key_mapper('', '<S-ScrollWheelDown>', '5zl')
 
 
--- filebrowser mappings
-key_mapper('', '<Leader>b', ':Lex<CR>')
-
 -- fzf mappings
 key_mapper('', '<Leader>p', "<cmd>lua require('fzf-lua').files()<CR>")
 key_mapper('', '<Leader>f', "<cmd>lua require('fzf-lua').grep_curbuf()<CR>")
 key_mapper('', '<Leader>F', "<cmd>lua require('fzf-lua').grep_project()<CR>")
+key_mapper('', '<Leader>b', "<cmd>lua require('fzf-lua').buffers()<CR>")
 
 -- Cmake commands
 vim.cmd("command! CMakeExportCompileCommands !cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1")
