@@ -69,6 +69,8 @@ packer.startup(function()
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     })
+    use 'tpope/vim-sleuth'
+    use 'vim-scripts/AutoClose'
 end
 )
 
