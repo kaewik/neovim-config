@@ -24,4 +24,8 @@ with pkgs; [
   # haskell
   ghc
   haskellPackages.haskell-language-server
+
+  # c#
+  omnisharp-roslyn
+  dotnet-sdk
 ]

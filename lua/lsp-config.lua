@@ -16,7 +16,7 @@ local function make_init_options()
     return init_options
 end
 
-local default_capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local default_capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local default_config = {
     on_attach = default_on_attach,
@@ -63,6 +63,12 @@ lspconfig.hls.setup({
     root_dir = function (filepath)
        return (util.root_pattern('hie.yaml', 'stack.yaml', 'cabal.project')(filepath))
     end
+})
+lspconfig.omnisharp.setup({
+    on_attach = default_on_attach,
+    capabilities = default_capabilities,
+    cmd = { "OmniSharp", "-lsp" },
+    root_dir = util.root_pattern("*.csproj", "*.sln", "*.proj"),
 })
 
 require('rust-tools').setup({
