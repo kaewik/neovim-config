@@ -5,27 +5,8 @@ with pkgs; [
   fd
   neovim
   ripgrep
-
-  # typescript
-  nodejs-18_x
-  nodePackages.typescript
-  nodePackages.typescript-language-server
-  nodePackages.vscode-langservers-extracted
-
-  # rust
-  rust-analyzer
-  rustup
-
-  # c++
-  gcc
-  cmake
-  llvm
-
-  # haskell
-  ghc
-  haskellPackages.haskell-language-server
-
-  # c#
-  omnisharp-roslyn
-  dotnet-sdk
+  git
+  delta
+  fzf
+  gcc # needed for tree-sitter
 ]

@@ -48,8 +48,8 @@ packer.startup(function()
         run = './install --all'
     }
     use { 'ibhagwan/fzf-lua',
-      -- optional for icon support
-		requires = { 'kyazdani42/nvim-web-devicons' }
+        -- optional for icon support
+        requires = { 'kyazdani42/nvim-web-devicons' }
     }
     use {
         'hrsh7th/nvim-cmp',
@@ -64,7 +64,12 @@ packer.startup(function()
     }
     use 'chrisbra/unicode.vim'
     use 'simrat39/rust-tools.nvim'
-    use { 'akinsho/toggleterm.nvim' }
+    use { 
+        'akinsho/toggleterm.nvim',
+        config = function()
+            require("toggleterm").setup()
+        end,
+    }
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
