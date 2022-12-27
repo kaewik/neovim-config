@@ -55,7 +55,7 @@ lspconfig.eslint.setup(default_config)
 lspconfig.clangd.setup({
     on_attach = default_on_attach,
     capabilities = default_capabilities,
-    cmd = { "clangd-12", "--background-index" },
+    cmd = { "clangd", "--background-index" },
 })
 lspconfig.hls.setup({
     on_attach = default_on_attach,
