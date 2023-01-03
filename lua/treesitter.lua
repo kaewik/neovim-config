@@ -1,3 +1,4 @@
+require("nvim-treesitter.install").prefer_git = true
 local configs = require'nvim-treesitter.configs'
 
 local disable_predicate = function (lang, bufnr)
@@ -10,7 +11,7 @@ end
 
 configs.setup {
     ensure_installed = "all",
-    ignore_install = { "phpdoc" },
+    ignore_install = { "phpdoc", "beancount" },
     highlight = {
         enable = true,
         disable = disable_predicate,
