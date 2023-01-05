@@ -2,11 +2,11 @@ local actions = require "fzf-lua.actions"
 require'fzf-lua'.setup {
   -- fzf_bin         = 'sk',            -- use skim instead of fzf?
                                         -- https://github.com/lotabout/skim
-	global_resume      = true,            -- enable global `resume`?
+    global_resume      = true,            -- enable global `resume`?
                                         -- can also be sent individually:
                                         -- `<any_function>.({ gl ... })`
-	global_resume_query = true,           -- include typed query in `resume`?
-	winopts = {
+    global_resume_query = true,           -- include typed query in `resume`?
+    winopts = {
         -- split         = "belowright new",-- open in a split instead?
                                             -- "belowright new"  : split below
                                             -- "aboveleft new"   : split above
@@ -75,8 +75,8 @@ require'fzf-lua'.setup {
             --   vim.api.nvim_buf_set_keymap(0, "t", "<C-j>", "<Down>",
             --     { silent = true, noremap = true })
         end,
-	},
-	keymap = {
+    },
+    keymap = {
         -- These override the default tables completely
         -- no need to set to `false` to disable a bind
         -- delete or modify is sufficient
@@ -109,8 +109,8 @@ require'fzf-lua'.setup {
             ["shift-down"]  = "preview-page-down",
             ["shift-up"]    = "preview-page-up",
         },
-	},
-	actions = {
+    },
+    actions = {
         -- These override the default tables completely
         -- no need to set to `false` to disable an action
         -- delete or modify is sufficient
@@ -138,8 +138,8 @@ require'fzf-lua'.setup {
             ["ctrl-v"]      = actions.buf_vsplit,
             ["ctrl-t"]      = actions.buf_tabedit,
         }
-	},
-	fzf_opts = {
+    },
+    fzf_opts = {
         -- options are sent as `<left>=<right>`
         -- set to `false` to remove a flag
         -- set to '' for a non-value flag
@@ -149,7 +149,7 @@ require'fzf-lua'.setup {
         ['--info']        = 'inline',
         ['--height']      = '100%',
         ['--layout']      = 'reverse',
-	},
+    },
     -- fzf '--color=' options (optional)
     --[[ fzf_colors = {
           ["fg"]          = { "fg", "CursorLine" },
@@ -166,7 +166,7 @@ require'fzf-lua'.setup {
           ["header"]      = { "fg", "Comment" },
           ["gutter"]      = { "bg", "Normal" },
       }, ]]
-	previewers = {
+    previewers = {
         cat = {
             cmd             = "cat",
             args            = "--number",
@@ -226,10 +226,9 @@ require'fzf-lua'.setup {
         -- otherwise auto-detect prioritizes `fd`:`rg`:`find`
         -- default options are controlled by 'fd|rg|find|_opts'
         -- NOTE: 'find -printf' requires GNU find
-        -- cmd            = "find . -type f -printf '%P\n'",
         find_opts         = [[-type f -not -path '*/\.git/*' -printf '%P\n']],
         rg_opts           = "--color=never --files --hidden --follow -g '!.git' -g '!.cache'",
-        fd_opts           = "--color=never --type f --hidden --follow --exclude .git --exclude .cache",
+        fd_opts           = "--color=never --type f --unrestricted --follow --exclude .git --exclude .cache",
         actions = {
             -- inherits from 'actions.files', here we can override
             -- or set bind to 'false' to disable a default action
@@ -237,8 +236,8 @@ require'fzf-lua'.setup {
             -- custom actions are available too
             ["ctrl-y"]      = function(selected) print(selected[1]) end,
         }
-	},
-	git = {
+    },
+    git = {
         files = {
             prompt          = 'GitFiles❯ ',
             cmd             = 'git ls-files --exclude-standard',
@@ -303,7 +302,7 @@ require'fzf-lua'.setup {
             -- ["A"]        = { icon = "+", color = "green" },
         },
     },
-	grep = {
+    grep = {
         prompt            = 'Rg❯ ',
         input_prompt      = 'Grep For❯ ',
         multiprocess      = true,           -- run command in a separate process
@@ -338,20 +337,20 @@ require'fzf-lua'.setup {
         },
         no_header             = false,    -- hide grep|cwd header?
         no_header_i           = false,    -- hide interactive header?
-	},
-	args = {
+    },
+    args = {
         prompt            = 'Args❯ ',
         files_only        = true,
         -- actions inherit from 'actions.files' and merge
         actions           = { ["ctrl-x"] = { actions.arg_del, actions.resume } }
-	},
-	oldfiles = {
+    },
+    oldfiles = {
         prompt            = 'History❯ ',
         cwd_only          = false,
         stat_file         = true,         -- verify files exist on disk
         include_current_session = false,  -- include bufs from current session
-	},
-	buffers = {
+    },
+    buffers = {
         prompt            = 'Buffers❯ ',
         file_icons        = true,         -- show file icons?
         color_icons       = true,         -- colorize file|git icons
@@ -364,8 +363,8 @@ require'fzf-lua'.setup {
             -- eliminating an otherwise unaesthetic win "flash"
             ["ctrl-x"]      = { actions.buf_del, actions.resume },
         }
-	},
-	tabs = {
+    },
+    tabs = {
         prompt            = 'Tabs❯ ',
         tab_title         = "Tab",
         tab_marker        = "<<",
@@ -381,22 +380,22 @@ require'fzf-lua'.setup {
             ['--delimiter'] = "'[\\):]'",
             ["--with-nth"]  = '2..',
         },
-	},
-	lines = {
-    previewer         = "builtin",    -- set to 'false' to disable
-    prompt            = 'Lines❯ ',
-    show_unlisted     = false,        -- exclude 'help' buffers
-    no_term_buffers   = true,         -- exclude 'term' buffers
-    fzf_opts = {
-		-- do not include bufnr in fuzzy matching
-		-- tiebreak by line no.
-		['--delimiter'] = "'[\\]:]'",
-		["--nth"]       = '2..',
-		["--tiebreak"]  = 'index',
     },
+    lines = {
+        previewer         = "builtin",    -- set to 'false' to disable
+        prompt            = 'Lines❯ ',
+        show_unlisted     = false,        -- exclude 'help' buffers
+        no_term_buffers   = true,         -- exclude 'term' buffers
+        fzf_opts = {
+                -- do not include bufnr in fuzzy matching
+                -- tiebreak by line no.
+                ['--delimiter'] = "'[\\]:]'",
+                ["--nth"]       = '2..',
+                ["--tiebreak"]  = 'index',
+        },
     -- actions inherit from 'actions.buffers'
-	},
-	blines = {
+    },
+    blines = {
         previewer         = "builtin",    -- set to 'false' to disable
         prompt            = 'BLines❯ ',
         show_unlisted     = true,         -- include 'help' buffers
@@ -408,8 +407,8 @@ require'fzf-lua'.setup {
             ["--tiebreak"]  = 'index',
         },
         -- actions inherit from 'actions.buffers'
-	},
-	tags = {
+    },
+    tags = {
         prompt                = 'Tags❯ ',
         ctags_file            = "tags",
         multiprocess          = true,
@@ -426,8 +425,8 @@ require'fzf-lua'.setup {
     },
     no_header             = false,    -- hide grep|cwd header?
     no_header_i           = false,    -- hide interactive header?
-	},
-	btags = {
+    },
+    btags = {
         prompt                = 'BTags❯ ',
         ctags_file            = "tags",
         multiprocess          = true,
@@ -442,8 +441,8 @@ require'fzf-lua'.setup {
             ["--tiebreak"]      = 'index',
         },
         -- actions inherit from 'actions.files'
-	},
-	colorschemes = {
+    },
+    colorschemes = {
         prompt            = 'Colorschemes❯ ',
         live_preview      = true,       -- apply the colorscheme on preview?
         actions           = { ["default"] = actions.colorscheme, },
@@ -453,12 +452,12 @@ require'fzf-lua'.setup {
             -- a live_preview of the colorscheme
             -- require('feline').reset_highlights()
         end,
-	},
-	quickfix = {
+    },
+    quickfix = {
         file_icons        = true,
         git_icons         = true,
-	},
-	lsp = {
+    },
+    lsp = {
         prompt_postfix    = '❯ ',       -- will be appended to the LSP label
                                         -- to override use 'prompt' instead
         cwd_only          = false,      -- LSP/diagnostics for cwd only?
@@ -474,7 +473,7 @@ require'fzf-lua'.setup {
             ["Information"] = { icon = "", color = "blue" },      -- info
             ["Hint"]        = { icon = "", color = "magenta" },   -- hint
         },
-	},
+    },
     -- uncomment to disable the previewer
     -- nvim = { marks = { previewer = { _ctor = false } } },
     -- helptags = { previewer = { _ctor = false } },
@@ -491,10 +490,10 @@ require'fzf-lua'.setup {
     --    blue, magenta, cyan, grey, dark_grey, white
     -- padding can help kitty term users with
     -- double-width icon rendering
-	file_icon_padding = '',
-	file_icon_colors = {
+    file_icon_padding = '',
+    file_icon_colors = {
         ["lua"]   = "blue",
-	},
+    },
     -- uncomment if your terminal/font does not support unicode character
     -- 'EN SPACE' (U+2002), the below sets it to 'NBSP' (U+00A0) instead
     -- nbsp = '\xc2\xa0',

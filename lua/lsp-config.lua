@@ -24,21 +24,6 @@ local default_config = {
 }
 
 -- setup language servers here
--- lspconfig.tsserver.setup({
---     on_attach = function(client, bufnr)
---         client.resolved_capabilities.document_formatting = false
---         client.resolved_capabilities.document_range_formatting = false
---         local ts_utils = require("nvim-lsp-ts-utils")
---         ts_utils.setup({})
---         ts_utils.setup_client(client)
--- 
---         mappings.set_local_ts_mappings(bufnr)
---         default_on_attach(client, bufnr)
---     end,
---     capabilities = default_capabilities,
---     root_dir = util.root_pattern("tsconfig.json", "jsconfig.json"),
---     init_options = make_init_options(),
--- })
 ts_utils.setup({
     disable_commands = false, -- prevent the plugin from creating Vim commands
     debug = false, -- enable debug logging for commands

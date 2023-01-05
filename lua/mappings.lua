@@ -32,7 +32,8 @@ key_mapper('', '<S-ScrollWheelDown>', '5zl')
 
 
 -- fzf mappings
-key_mapper('', '<Leader>p', "<cmd>lua require('fzf-lua').files()<CR>")
+key_mapper('', '<Leader>p', "<cmd>lua require('fzf-lua').git_files()<CR>")
+key_mapper('', '<Leader>P', "<cmd>lua require('fzf-lua').files()<CR>")
 key_mapper('', '<Leader>f', "<cmd>lua require('fzf-lua').grep_curbuf()<CR>")
 key_mapper('', '<Leader>F', "<cmd>lua require('fzf-lua').grep_project()<CR>")
 key_mapper('', '<Leader>b', "<cmd>lua require('fzf-lua').buffers()<CR>")
