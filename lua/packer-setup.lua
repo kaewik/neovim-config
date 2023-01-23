@@ -27,6 +27,7 @@ packer.startup(function()
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+    use 'tpope/vim-vinegar'
     use 'sheerun/vim-polyglot'
     use {
         'prettier/vim-prettier',
