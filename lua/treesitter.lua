@@ -10,8 +10,23 @@ local disable_predicate = function (lang, bufnr)
 end
 
 configs.setup {
-    ensure_installed = "all",
-    ignore_install = { "phpdoc", "beancount" },
+    ensure_installed = { 
+        "c", 
+        "cmake",
+        "cpp";
+        "css",
+        "haskell",
+        "html",
+        "java",
+        "javascript",
+        "lua", 
+        "make",
+        "nix",
+        "python",
+        "rust",
+        "typescript",
+        "vim", 
+        "help" },
     highlight = {
         enable = true,
         disable = disable_predicate,

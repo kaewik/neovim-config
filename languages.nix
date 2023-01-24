@@ -11,15 +11,7 @@ with pkgs; [
   rust-analyzer
   rustup
 
-  # c++
-  cmake
-  clangStdenv
-
   # haskell
   ghc
   haskellPackages.haskell-language-server
-
-  # c#
-  omnisharp-roslyn
-  dotnet-sdk
 ]
