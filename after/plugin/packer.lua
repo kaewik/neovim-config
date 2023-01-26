@@ -10,7 +10,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 vim.cmd('packadd packer.nvim')
-
 local packer = require'packer'
 local util = require'packer.util'
 
@@ -29,12 +28,16 @@ packer.startup(function()
     }
     use {
         'tpope/vim-vinegar',
-        keys = '-'
+        keys = '-',
     }
-    use 'sainnhe/sonokai'
-    use { 
+    use {
+        'sainnhe/sonokai'
+    }
+    --vim.api.nvim_create_user_command('Lsp', '', { nargs = 0 })
+    use {
         'neovim/nvim-lspconfig',
-        module = 'lspconfig'
+        keys = [[<leader>l]],
+        config = function () require('lazy/nvim-lspconfig') end
     }
     use {
         'jose-elias-alvarez/nvim-lsp-ts-utils',
@@ -46,18 +49,16 @@ packer.startup(function()
     }
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+        requires = { 'kyazdani42/nvim-web-devicons' }
     }
     -- You don't need to install this if you already have fzf installed
     use {
         'junegunn/fzf',
         run = './install --all',
-        module = 'fzf-lua'
     }
     use { 'ibhagwan/fzf-lua',
         -- optional for icon support
         requires = { 'kyazdani42/nvim-web-devicons' },
-        module = 'fzf-lua'
     }
     use {
         'hrsh7th/nvim-cmp',
@@ -77,7 +78,8 @@ packer.startup(function()
     }
     use { 
         'akinsho/toggleterm.nvim',
-        module = 'toggleterm'
+        keys = [[<c-\>]],
+        config = function () require('lazy/toggleterm') end
     }
     use({
         'iamcco/markdown-preview.nvim',
