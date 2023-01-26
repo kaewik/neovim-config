@@ -44,12 +44,6 @@ lspconfig.hls.setup({
        return (util.root_pattern('hie.yaml', 'stack.yaml', 'cabal.project')(filepath))
     end
 })
-lspconfig.omnisharp.setup({
-    on_attach = default_on_attach,
-    capabilities = default_capabilities,
-    cmd = { "OmniSharp", "-lsp" },
-    root_dir = util.root_pattern("*.csproj", "*.sln", "*.proj"),
-})
 
 require('rust-tools').setup({
     server = default_config

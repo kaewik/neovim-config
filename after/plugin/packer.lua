@@ -27,18 +27,23 @@ packer.startup(function()
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
-    use 'tpope/vim-vinegar'
-    use 'sheerun/vim-polyglot'
     use {
-        'prettier/vim-prettier',
-        run = 'yarn install'
+        'tpope/vim-vinegar',
+        keys = '-'
     }
     use 'sainnhe/sonokai'
-    use 'neovim/nvim-lspconfig'
-    use 'anott03/nvim-lspinstall'
-    use 'nvim-lua/plenary.nvim'
-    use 'jose-elias-alvarez/nvim-lsp-ts-utils'
-    use 'jose-elias-alvarez/typescript.nvim'
+    use { 
+        'neovim/nvim-lspconfig',
+        module = 'lspconfig'
+    }
+    use {
+        'jose-elias-alvarez/nvim-lsp-ts-utils',
+        module = 'nvim-lsp-ts-utils'
+    }
+    use { 
+        'jose-elias-alvarez/typescript.nvim',
+        module = 'typescript'
+    }
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -46,11 +51,13 @@ packer.startup(function()
     -- You don't need to install this if you already have fzf installed
     use {
         'junegunn/fzf',
-        run = './install --all'
+        run = './install --all',
+        module = 'fzf-lua'
     }
     use { 'ibhagwan/fzf-lua',
         -- optional for icon support
-        requires = { 'kyazdani42/nvim-web-devicons' }
+        requires = { 'kyazdani42/nvim-web-devicons' },
+        module = 'fzf-lua'
     }
     use {
         'hrsh7th/nvim-cmp',
@@ -64,16 +71,18 @@ packer.startup(function()
         }
     }
     use 'chrisbra/unicode.vim'
-    use 'simrat39/rust-tools.nvim'
+    use {
+        'simrat39/rust-tools.nvim',
+        module = 'rust-tools'
+    }
     use { 
         'akinsho/toggleterm.nvim',
-        config = function()
-            require("toggleterm").setup()
-        end,
+        module = 'toggleterm'
     }
     use({
-        "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end,
+        'iamcco/markdown-preview.nvim',
+        run = function() vim.fn['mkdp#util#install']() end,
+        ft = { 'markdown' }
     })
     use 'tpope/vim-sleuth'
     use 'vim-scripts/AutoClose'
@@ -83,6 +92,6 @@ end
 vim.cmd([[
     augroup packer_user_config
         autocmd!
-        autocmd BufWritePost init.lua source <afile> | PackerCompile
+        autocmd BufWritePost plugins.lua source <afile> | PackerCompile
     augroup end
 ]])
