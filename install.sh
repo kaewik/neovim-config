@@ -16,6 +16,7 @@ set_up_links () {
     mkdir -p $HOME/.config/nvim/
     ln -nfs $PROJECT_FOLDER/init.lua $HOME/.config/nvim/init.lua
     ln -nfs $PROJECT_FOLDER/lua $HOME/.config/nvim/lua
+    ln -nfs $PROJECT_FOLDER/after $HOME/.config/nvim/after
 }
 
 check_if_platform_supported () {
@@ -44,7 +45,7 @@ install_nix () {
 
 install_dependencies () {
     echo "Install dependencies ..."
-    nix-env -f $PROJECT_FOLDER/dependencies.nix -i ".*"
+    nix-env -f $PROJECT_FOLDER/nix/dependencies.nix -i ".*"
 }
 
 check_if_platform_supported
