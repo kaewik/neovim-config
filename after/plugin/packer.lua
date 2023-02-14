@@ -51,11 +51,6 @@ packer.startup(function()
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons' }
     }
-    -- You don't need to install this if you already have fzf installed
-    use {
-        'junegunn/fzf',
-        run = './install --all',
-    }
     use { 'ibhagwan/fzf-lua',
         -- optional for icon support
         requires = { 'kyazdani42/nvim-web-devicons' },
