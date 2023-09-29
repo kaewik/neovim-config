@@ -1,5 +1,5 @@
 {
-  inputs.neovim-flake.url = "github:jordanisaacs/neovim-flake";
+  inputs.neovim-flake.url = "github:kaewik/neovim-flake";
 
   inputs.flake-utils.url = "github:numtide/flake-utils";
 
@@ -49,9 +49,9 @@
               zig.enable = true;
               python.enable = true;
               plantuml.enable = true;
-              #java.enable = true;
-              #kotlin.enable = true;
-              #terraform.enable = true;
+              java.enable = true;
+              kotlin.enable = true;
+              terraform.enable = true;
 
               # See tidal config
               tidal.enable = false;
@@ -90,9 +90,7 @@
               enable = true;
             };
             tabline.nvimBufferline.enable = true;
-            treesitter = {
-              context.enable = true;
-            };
+            treesitter.context.enable = true;
             keys = {
               enable = true;
               whichKey.enable = true;

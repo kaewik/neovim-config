@@ -157,15 +157,15 @@
         "tidalcycles": "tidalcycles"
       },
       "locked": {
-        "lastModified": 1693894760,
-        "narHash": "sha256-Y018QyommvqocEI3dsU0nZQvxkxz/69NpHbIczR1rRE=",
-        "owner": "jordanisaacs",
+        "lastModified": 1696001795,
+        "narHash": "sha256-Ou4ZPWIzyCUjCfjTKCRK9CE+lGFqsh+gXfpgmVfJ558=",
+        "owner": "kaewik",
         "repo": "neovim-flake",
-        "rev": "60950c0905e09fc8b3a414cdb47b8cb4975541b4",
+        "rev": "d3a0cc7752cc3f274c70ce3b29173d8ce047f7e0",
         "type": "github"
       },
       "original": {
-        "owner": "jordanisaacs",
+        "owner": "kaewik",
         "repo": "neovim-flake",
         "type": "github"
       }

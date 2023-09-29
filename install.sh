@@ -3,4 +3,4 @@ neovim_store_paths=$(nix profile list --json | jq -r '.elements[] | select(.orig
 while IFS= read -r store_paths; do
     nix profile remove $store_paths
 done <<< "$neovim_store_paths"
-nix profile install .#
+nix profile install .#neovim
