@@ -35,6 +35,7 @@
               enableTreesitter = true;
               enableExtraDiagnostics = false;
 
+              bash.enable = true;
               nix.enable = true;
               markdown.enable = true;
               html.enable = true;
