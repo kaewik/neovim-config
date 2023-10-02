@@ -157,11 +157,11 @@
         "tidalcycles": "tidalcycles"
       },
       "locked": {
-        "lastModified": 1696001795,
-        "narHash": "sha256-Ou4ZPWIzyCUjCfjTKCRK9CE+lGFqsh+gXfpgmVfJ558=",
+        "lastModified": 1696254571,
+        "narHash": "sha256-qRagjhwSAgFm4px/neEWN3OkBl+h5FIsUpwEwSs+Z04=",
         "owner": "kaewik",
         "repo": "neovim-flake",
-        "rev": "d3a0cc7752cc3f274c70ce3b29173d8ce047f7e0",
+        "rev": "2bcc3e4410a4c71d9b6e6875af122d17f5e4337f",
         "type": "github"
       },
       "original": {
@@ -230,11 +230,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1695806987,
-        "narHash": "sha256-fX5kGs66NZIxCMcpAGIpxuftajHL8Hil1vjHmjjl118=",
+        "lastModified": 1696234590,
+        "narHash": "sha256-mgOzQYTvaTT4bFopVOadlndy2RPwLy60rDjIWOGujwo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "f3dab3509afca932f3f4fd0908957709bb1c1f57",
+        "rev": "f902cb49892d300ff15cb237e48aa1cad79d68c3",
         "type": "github"
       },
       "original": {

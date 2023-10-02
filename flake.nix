@@ -29,6 +29,7 @@
           config.vim = {
             startPlugins = ["copilot"];
             disableArrows = true;
+            scrollOffset = 999;
             languages = {
               enableLSP = false;
               enableFormat = true;
