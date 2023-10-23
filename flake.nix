@@ -54,6 +54,7 @@
               java.enable = true;
               kotlin.enable = true;
               terraform.enable = true;
+              cmake.enable = true;
 
               # See tidal config
               tidal.enable = false;
