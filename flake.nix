@@ -91,6 +91,10 @@
             };
             filetree.nvimTreeLua = {
               enable = true;
+              treeWidth = 500;
+              hideFiles = [ ];
+              disableNetRW = true;
+              closeOnFileOpen = true;
             };
             tabline.nvimBufferline.enable = true;
             treesitter.context.enable = true;
