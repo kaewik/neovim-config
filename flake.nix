@@ -7,12 +7,16 @@
   inputs.copilot.url = "github:github/copilot.vim/release";
   inputs.copilot.flake = false;
 
+  inputs.vim-sleuth.url = "github:tpope/vim-sleuth";
+  inputs.vim-sleuth.flake = false;
+
   outputs = {
     self,
     flake-utils,
     nixpkgs,
     neovim-flake,
     copilot,
+    vim-sleuth,
     ...
   }:
     flake-utils.lib.eachDefaultSystem (system: let
@@ -25,10 +29,11 @@
           vimAlias = true;
           rawPlugins = {
             copilot.src = copilot;
+            vim-sleuth.src = vim-sleuth;
           };
         };
         config.vim = {
-          startPlugins = ["copilot"];
+          startPlugins = ["copilot" "vim-sleuth"];
           disableArrows = true;
           scrollOffset = 999;
           languages = {
