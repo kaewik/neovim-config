@@ -160,11 +160,11 @@
         "tidalcycles": "tidalcycles"
       },
       "locked": {
-        "lastModified": 1710018039,
-        "narHash": "sha256-B9Mh9TBea+Of8PHa7k5jZ4C8wAW7FbtHqURnDrZDc10=",
+        "lastModified": 1710077362,
+        "narHash": "sha256-gLBtNJu02mNoe3IjaFMmO7MSR2iTPpFaIPxlQdfLyIM=",
         "owner": "kaewik",
         "repo": "neovim-flake",
-        "rev": "54e03e0481c057f77954805cb5eaa67d899b2f55",
+        "rev": "a6f4476273462987cdd03862bd75a9ae5ea378c5",
         "type": "github"
       },
       "original": {
